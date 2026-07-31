@@ -1,0 +1,4 @@
+Data science is the process of collecting data analyzing data and visualizing data.
+Python is widely used in data science.
+Data analysis helps organizations make better decisions.
+Python provides many libraries for data analysis and visualization.
