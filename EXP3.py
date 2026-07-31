@@ -1,23 +1,23 @@
 import numpy as np
 import matplotlib.pyplot as plt
-sales_data = np.genfromtxt(
-    "sales_data.csv",
+
+house_data = np.genfromtxt(
+    "house_data.csv",
     delimiter=",",
     skip_header=1
 )
-average_price = np.mean(sales_data)
-print("Average Price of All Products =", round(average_price, 2))
+filtered = house_data[house_data[:, 0] > 4]
 
-product_average = np.mean(sales_data, axis=0)
-products = ["Product1", "Product2", "Product3"]
+average_price = np.mean(filtered[:, 2])
+
+print("Average Sale Price =", round(average_price, 2))
 
 plt.figure(figsize=(6, 4))
-plt.bar(products, product_average)
+plt.bar(filtered[:, 0].astype(int), filtered[:, 2])
 
-plt.title("Average Sales of Products")
-plt.xlabel("Products")
-plt.ylabel("Average Price")
+plt.title("Bedrooms vs Sale Price")
+plt.xlabel("Number of Bedrooms")
+plt.ylabel("Sale Price")
 
-plt.savefig("sales_graph.png")
-
-print("Graph saved as sales_graph.png")
+plt.savefig("house_graph.png")
+print("Graph saved as house_graph.png")
