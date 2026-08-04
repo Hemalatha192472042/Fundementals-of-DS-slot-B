@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv("Problem10_Branches.csv")
+
+print(df)
+
+a = df.iloc[0]
+b = df.iloc[1]
+
+if a["CI_Upper"] >= b["CI_Lower"]:
+    print("Confidence intervals overlap.")
+else:
+    print("Branch A performs better.")
