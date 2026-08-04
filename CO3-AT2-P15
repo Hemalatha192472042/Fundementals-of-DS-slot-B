@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv("Problem15_Spam.csv")
+
+Pspam = df["P_Spam"][0]
+PofferSpam = df["P_Offer_given_Spam"][0]
+PofferNotSpam = df["P_Offer_given_NotSpam"][0]
+
+Poffer = PofferSpam*Pspam + PofferNotSpam*(1-Pspam)
+
+posterior = (PofferSpam*Pspam)/Poffer
+
+print("P(Spam | Offer) =", posterior)
