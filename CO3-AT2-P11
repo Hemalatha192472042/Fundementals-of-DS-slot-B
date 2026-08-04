@@ -1,0 +1,12 @@
+import pandas as pd
+from scipy.stats import ttest_1samp
+import numpy as np
+
+df = pd.read_csv("Problem11_Battery.csv")
+
+sample = np.random.normal(df["Sample_Mean"][0], df["SD"][0], int(df["Sample_Size"][0]))
+
+t, p = ttest_1samp(sample, 10)
+
+print("t-value =", t)
+print("p-value =", p)
