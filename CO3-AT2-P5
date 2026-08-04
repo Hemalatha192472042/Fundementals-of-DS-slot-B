@@ -1,0 +1,6 @@
+import pandas as pd
+
+df = pd.read_csv("Problem05_Delivery.csv")
+
+print("Mean =", df["Value"].mean())
+print("Variance =", df["Value"].var())
