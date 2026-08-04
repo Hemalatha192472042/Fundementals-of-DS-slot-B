@@ -1,0 +1,18 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("Problem04_Traffic.csv")
+
+print(df.describe())
+
+print("\nCovariance Matrix")
+print(df.cov(numeric_only=True))
+
+print("\nCorrelation Matrix")
+print(df.corr(numeric_only=True))
+
+plt.scatter(df["Rainfall"], df["Accident_Count"])
+plt.xlabel("Rainfall")
+plt.ylabel("Accident Count")
+plt.title("Rainfall vs Accident Count")
+plt.show()
