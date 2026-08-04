@@ -1,0 +1,12 @@
+import pandas as pd
+from statsmodels.stats.proportion import proportions_ztest
+
+df = pd.read_csv("Problem17_Conversion.csv")
+
+count = df["Purchases"]
+nobs = df["Visitors"]
+
+z, p = proportions_ztest(count, nobs)
+
+print("Z-value =", z)
+print("p-value =", p)
