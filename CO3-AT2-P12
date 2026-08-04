@@ -1,0 +1,9 @@
+import pandas as pd
+from scipy.stats import ttest_ind
+
+df = pd.read_csv("Problem12_Marketing.csv")
+
+t, p = ttest_ind(df["After"], df["Before"])
+
+print("t-value =", t)
+print("p-value =", p)
