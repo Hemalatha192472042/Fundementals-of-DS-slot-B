@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv("Problem03_Employee.csv")
+
+print("Mean =", df["Performance_Rating"].mean())
+print("Variance =", df["Performance_Rating"].var())
+print("Standard Deviation =", df["Performance_Rating"].std())
+
+print("Covariance (Training, Rating) =", df["Training_Hours"].cov(df["Performance_Rating"]))
+print("Covariance (Projects, Rating) =", df["Projects_Completed"].cov(df["Performance_Rating"]))
+
+print("Correlation (Training, Rating) =", df["Training_Hours"].corr(df["Performance_Rating"]))
+print("Correlation (Projects, Rating) =", df["Projects_Completed"].corr(df["Performance_Rating"]))
