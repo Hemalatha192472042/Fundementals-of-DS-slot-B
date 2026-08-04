@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv("Problem02_Ecommerce.csv")
+
+print("Mean =", df["Purchase_Amount"].mean())
+print("Variance =", df["Purchase_Amount"].var())
+print("Standard Deviation =", df["Purchase_Amount"].std())
+
+print("Covariance (Visits, Purchase) =", df["Website_Visits"].cov(df["Purchase_Amount"]))
+print("Covariance (Time, Purchase) =", df["Time_Spent"].cov(df["Purchase_Amount"]))
+
+print("Correlation (Visits, Purchase) =", df["Website_Visits"].corr(df["Purchase_Amount"]))
+print("Correlation (Time, Purchase) =", df["Time_Spent"].corr(df["Purchase_Amount"]))
