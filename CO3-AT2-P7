@@ -1,0 +1,10 @@
+import pandas as pd
+
+df = pd.read_csv("Problem07_Ratings.csv")
+
+print("Mean =", df["Value"].mean())
+print("Variance =", df["Value"].var())
+
+se = df["Value"].std() / (len(df) ** 0.5)
+
+print("Standard Error =", se)
