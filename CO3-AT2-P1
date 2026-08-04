@@ -1,0 +1,28 @@
+import pandas as pd
+
+# Read CSV file
+df = pd.read_csv("Problem01_Hospital.csv")
+
+# Mean and Standard Deviation
+print("Mean BP =", df["Systolic_BP"].mean())
+print("Standard Deviation =", df["Systolic_BP"].std())
+
+# Covariance
+print("\nCovariance (Exercise, BP) =",
+      df["Daily_Exercise"].cov(df["Systolic_BP"]))
+
+print("Covariance (BMI, BP) =",
+      df["BMI"].cov(df["Systolic_BP"]))
+
+# Correlation
+corr1 = df["Daily_Exercise"].corr(df["Systolic_BP"])
+corr2 = df["BMI"].corr(df["Systolic_BP"])
+
+print("\nCorrelation (Exercise, BP) =", corr1)
+print("Correlation (BMI, BP) =", corr2)
+
+# Strongest Factor
+if abs(corr1) > abs(corr2):
+    print("\nExercise is more strongly associated with Blood Pressure.")
+else:
+    print("\nBMI is more strongly associated with Blood Pressure.")
