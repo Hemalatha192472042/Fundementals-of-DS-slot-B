@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv("Problem20_MAE.csv")
+
+mean = df["Mean_Difference"][0]
+sd = df["SD_Difference"][0]
+n = df["Test_Folds"][0]
+
+se = sd/(n**0.5)
+
+t = mean/se
+
+print("t-value =", t)
