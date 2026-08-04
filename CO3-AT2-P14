@@ -1,0 +1,10 @@
+import pandas as pd
+
+df = pd.read_csv("Problem14_Defects.csv")
+
+p = df["Defective"][0] / df["Sample_Size"][0]
+se = (p*(1-p)/df["Sample_Size"][0])**0.5
+margin = 1.96 * se
+
+print("Defect Rate =", p)
+print("95% Confidence Interval =", (p-margin, p+margin))
