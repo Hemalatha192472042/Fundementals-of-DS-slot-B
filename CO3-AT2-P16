@@ -1,0 +1,11 @@
+import pandas as pd
+
+df = pd.read_csv("Problem16_Disease.csv")
+
+prev = df["Prevalence"][0]
+sens = df["Sensitivity"][0]
+spec = df["Specificity"][0]
+
+posterior = (sens*prev) / ((sens*prev) + ((1-spec)*(1-prev)))
+
+print("Posterior Probability =", posterior)
