@@ -1,0 +1,47 @@
+import statistics
+print("1. Discrete Data")
+print("2. Continuous Data")
+ch = int(input("Enter choice: "))
+
+# Discrete Data
+if ch == 1:
+    data = list(map(int, input("Enter values separated by space: ").split()))
+
+    print("Mean =", sum(data)/len(data))
+    print("Median =", statistics.median(data))
+    print("Mode =", statistics.mode(data))
+
+# Continuous Data
+n = int(input("Enter number of classes: "))
+
+l, u, f = [], [], []
+
+for i in range(n):
+    l.append(float(input("Lower limit: ")))
+    u.append(float(input("Upper limit: ")))
+    f.append(int(input("Frequency: ")))
+
+mid = [(l[i]+u[i])/2 for i in range(n)]
+mean = sum(mid[i]*f[i] for i in range(n))/sum(f)
+
+cf = []
+s = 0
+for x in f:
+    s += x
+    cf.append(s)
+
+N = sum(f)
+m = next(i for i in range(n) if cf[i] >= N/2)
+
+median = l[m] + ((N/2-(0 if m==0 else cf[m-1]))/f[m])*(u[m]-l[m])
+
+mo = f.index(max(f))
+f0 = 0 if mo==0 else f[mo-1]
+f1 = f[mo]
+f2 = 0 if mo==n-1 else f[mo+1]
+
+mode = l[mo] + ((f1-f0)/(2*f1-f0-f2))*(u[mo]-l[mo])
+
+print("Mean =", round(mean,2))
+print("Median =", round(median,2))
+print("Mode =", round(mode,2))
