@@ -1,0 +1,18 @@
+import pandas as pd
+
+df = pd.read_csv("Problem18_Features.csv")
+
+mean1 = df["Mean_Engagement"][0]
+mean2 = df["Mean_Engagement"][1]
+
+sd1 = df["SD"][0]
+sd2 = df["SD"][1]
+
+n1 = df["Users"][0]
+n2 = df["Users"][1]
+
+se = ((sd1**2/n1) + (sd2**2/n2))**0.5
+
+t = (mean2-mean1)/se
+
+print("t-value =", t)
