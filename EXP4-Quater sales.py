@@ -1,3 +1,11 @@
+#4. Scenario: You are working on a project that involves analyzing the sales performance of a company  over the past four quarters. The quarterly sales 
+#data is stored in a NumPy array named sales_data,  where each element represents the sales amount for a specific quarter. Your task is to calculate the  t
+#otal sales for the year and determine the percentage increase in sales from the first quarter to the fourth  quarter. 
+#Question: Using NumPy arrays and arithmetic operations calculate the total sales for the year and determine the percentage increase in sales from the first 
+#quarter to the fourth quarter? 
+
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 
