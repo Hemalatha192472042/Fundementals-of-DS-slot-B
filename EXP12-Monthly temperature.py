@@ -1,3 +1,14 @@
+#12. Scenario: You are working on a data analysis project that involves analyzing the monthly temperature and rainfall data for a city. You have a 
+#dataset containing the monthly temperature and rainfall values for each month of a year. Your task is to develop a Python program that generates line  
+#plots and scatter plots to visualize the temperature and rainfall data. 
+#Question: 
+#1. Develop a Python program to create a line plot of the monthly temperature data. 
+#2: Develop a Python program to create a scatter plot of the monthly rainfall data. 
+
+
+
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
